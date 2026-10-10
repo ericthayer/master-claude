@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Master Claude</title>
+  <meta name="description" content="Claude skills, specs and the weekly kaizen ledger." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f6f7;
+      --text: #1b1e21;
+      --muted: #5a6168;
+      --border: #dde1e5;
+      --accent: #0b6e69;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1215;
+        --surface: #181c20;
+        --text: #e8eaed;
+        --muted: #a2a9b0;
+        --border: #2c3238;
+        --accent: #4fc9c1;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 44rem; margin: 0 auto; padding: 3rem 1rem; }
+    h1 { font-size: 2rem; margin: 0 0 .25rem; }
+    h2 { font-size: 1.125rem; margin: 2.5rem 0 .75rem; }
+    p { margin: 0 0 1rem; color: var(--muted); }
+    ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+    li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: .5rem;
+      padding: .875rem 1rem;
+    }
+    li p { margin: .25rem 0 0; font-size: .9375rem; }
+    a { color: var(--accent); font-weight: 600; text-underline-offset: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    footer { margin-top: 3rem; font-size: .875rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Master Claude</h1>
+      <p>Home for Claude skills, specs and the weekly kaizen ledger.</p>
+    </header>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/ericthayer/master-claude/blob/main/skills/spec-to-component/SKILL.md">spec-to-component</a>
+          <p>Turn a design-system component request or ticket into a testable spec, then a plan, then an implementation with a11y and token gates.</p>
+        </li>
+        <li>
+          <a href="https://github.com/ericthayer/master-claude/blob/main/skills/design-token-audit/SKILL.md">design-token-audit</a>
+          <p>Audit a codebase or diff for design-token drift: hard-coded values, unused or duplicate tokens, theme gaps and contrast failures.</p>
+        </li>
+        <li>
+          <a href="https://github.com/ericthayer/master-claude/blob/main/skills/kaizen-retro/SKILL.md">kaizen-retro</a>
+          <p>Run a weekly kaizen retro on Claude workflows: find repeated prompts, blind approvals and slow steps, log metrics, and set next week's hypothesis.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="refs-heading">
+      <h2 id="refs-heading">Specs and ledger</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/ericthayer/master-claude/blob/main/specs/_template.md">Component spec template</a>
+          <p>The template <code>spec-to-component</code> fills in.</p>
+        </li>
+        <li>
+          <a href="https://github.com/ericthayer/master-claude/tree/main/ledger">Kaizen ledger</a>
+          <p>One entry per week, written by <code>kaizen-retro</code>.</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <a href="https://github.com/ericthayer/master-claude">Source on GitHub</a>
+    </footer>
+  </main>
+</body>
+</html>
