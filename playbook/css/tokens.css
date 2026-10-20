@@ -1,0 +1,60 @@
+/* Layout: a design-tool workspace. A Layers panel on the left (sections are frames, parts are layers) beside a canvas column of readable prose. */
+:root{
+  --bg:#F4F5F8;
+  --panel:#FFFFFF;
+  --hover:#ECEEF3;
+  --ink:#16181F;
+  --ink-2:#464D5E;
+  --ink-3:#5F677A;
+  --line:#DDE0E8;
+  --line-strong:#C4C9D4;
+  --select:#1F5BE0;
+  --select-ink:#FFFFFF;
+  --select-tint:#E8EEFD;
+  --redline:#C81D5E;
+  --redline-tint:#FCE9F0;
+  --sticky:#FFF0A6;
+  --sticky-ink:#3A3210;
+  --sticky-edge:#E6CF5E;
+  --ok:#157347;
+  --ok-tint:#E2F3E9;
+  --syn-tag:#1F5BE0;
+  --syn-attr:#7B3CC2;
+  --syn-str:#0F7A57;
+  --syn-prop:#9C4A00;
+  --syn-com:#6B7285;
+  --shadow:0 1px 2px rgba(22,24,31,.06), 0 6px 16px rgba(22,24,31,.07);
+
+  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"Atkinson Hyperlegible Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+
+  --topbar-h:56px;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101217; --panel:#181B22; --hover:#1F232C;
+    --ink:#E8EAF0; --ink-2:#B2B8C6; --ink-3:#9198A8;
+    --line:#272B35; --line-strong:#3A3F4C;
+    --select:#7FA0FF; --select-ink:#0A0F1E; --select-tint:#1B2546;
+    --redline:#FF77A8; --redline-tint:#36182A;
+    --sticky:#353016; --sticky-ink:#F4E8B0; --sticky-edge:#5A5220;
+    --ok:#5BD196; --ok-tint:#13301F;
+    --syn-tag:#82A3FF; --syn-attr:#C7A2FF; --syn-str:#6ED8AE; --syn-prop:#F2AE6B; --syn-com:#8C93A3;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.32);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101217; --panel:#181B22; --hover:#1F232C;
+  --ink:#E8EAF0; --ink-2:#B2B8C6; --ink-3:#9198A8;
+  --line:#272B35; --line-strong:#3A3F4C;
+  --select:#7FA0FF; --select-ink:#0A0F1E; --select-tint:#1B2546;
+  --redline:#FF77A8; --redline-tint:#36182A;
+  --sticky:#353016; --sticky-ink:#F4E8B0; --sticky-edge:#5A5220;
+  --ok:#5BD196; --ok-tint:#13301F;
+  --syn-tag:#82A3FF; --syn-attr:#C7A2FF; --syn-str:#6ED8AE; --syn-prop:#F2AE6B; --syn-com:#8C93A3;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.32);
+  color-scheme:dark;
+}
