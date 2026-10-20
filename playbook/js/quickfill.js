@@ -4,6 +4,7 @@ import { state, save } from "./store.js";
 import { renderAllPrompts } from "./prompts.js";
 
 export function initQuickFill() {
+  if (!$("#quickfill")) return;
   const inputs = $$("#quickfill input[data-field]");
   const count = $("#qf-count");
   const renderFillCount = () => {

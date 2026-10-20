@@ -55,14 +55,16 @@ function initDownloads(btn) {
 
 export function initKit() {
   const kitCopy = $("#kit-copy"), kitFallback = $("#kit-fallback"), kitLabel = $(".kit-copy-label");
+  if (!kitCopy) return;
+  const label = kitLabel.textContent, count = $$("#kit-list .kit-item").length;
   kitCopy.addEventListener("click", () => {
     const md = kitMarkdown();
     copyText(md, null, () => {
       kitFallback.value = md; kitFallback.hidden = false;
       kitFallback.focus(); kitFallback.select();
     }, () => {
-      kitLabel.textContent = "Copied all 15";
-      setTimeout(() => { kitLabel.textContent = "Copy all 15 prompts"; }, 1800);
+      kitLabel.textContent = "Copied all " + count;
+      setTimeout(() => { kitLabel.textContent = label; }, 1800);
     });
   });
   initDownloads($("#kit-download"));

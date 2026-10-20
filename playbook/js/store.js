@@ -1,6 +1,6 @@
 /* Reader progress and quick-fill details, kept in this browser only. */
 
-const KEY = "ux-claude-playbook:v1";
+const KEY = document.documentElement.dataset.storeKey || "ux-claude-playbook:v1";
 
 export const FRAMES = ["f1", "f2", "f3", "f4", "f5"];
 export const state = { done: {}, steps: {}, fill: {} };

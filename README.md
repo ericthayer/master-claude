@@ -8,6 +8,7 @@ Home for Claude skills, specs, guides and the weekly kaizen ledger.
 | `specs/_template.md` | Component spec template used by `spec-to-component` |
 | `ledger/` | Weekly retro entries written by `kaizen-retro` |
 | `playbook/` | UX Designer's Claude Playbook, served at `/playbook/` ([artifact](https://claude.ai/artifact/BADbt1Tm6tmfVFh4rm6nzQ)) |
+| `playbook/condensed/` | Claude Playbook Quick Start, the condensed edition, served at `/playbook/condensed/`. Shares the playbook's CSS and JS. |
 
 ## Preview locally
 
