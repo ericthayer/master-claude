@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en" data-store-key="ux-claude-playbook-quickstart:v1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude Playbook Quick Start</title>
+<meta name="description" content="The condensed edition of the UX Designer's Claude Playbook: prompting, GitHub, and a portfolio rebuild with Claude in about an hour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@200..800&display=swap">
+<link rel="stylesheet" href="/playbook/css/tokens.css">
+<link rel="stylesheet" href="/playbook/css/base.css">
+<link rel="stylesheet" href="/playbook/css/layout.css">
+<link rel="stylesheet" href="/playbook/css/content.css">
+<link rel="stylesheet" href="/playbook/css/widgets.css">
+<link rel="stylesheet" href="/playbook/css/responsive.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-frame" viewBox="0 0 16 16"><path d="M5.5 1.5v13M10.5 1.5v13M1.5 5.5h13M1.5 10.5h13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-text" viewBox="0 0 16 16"><path d="M3 3.5h10M8 3.5v9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 16 16"><rect x="5.5" y="5.5" width="8" height="8" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 3.6V3.2A1.7 1.7 0 0 0 8.8 1.5H4.2A1.7 1.7 0 0 0 2.5 3.2v4.6a1.7 1.7 0 0 0 1.7 1.7h.4" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="M3.2 8.6l3 3 6.6-7.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 16 16"><path d="M8 1.8l6.2 3.4L8 8.6 1.8 5.2z M1.8 8.2L8 11.6l6.2-3.4 M1.8 11.1L8 14.5l6.2-3.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 16 16"><path d="M8 2v8.2M4.6 7L8 10.4 11.4 7M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="btn contents-btn" id="open-layers" type="button" aria-controls="layers" aria-expanded="false"><svg class="ico"><use href="#i-layers"/></svg>Contents</button>
+    <a class="brand" href="#start" aria-label="Claude Playbook Quick Start, back to start"><span class="brand-mark" aria-hidden="true"><svg class="ico"><use href="#i-frame"/></svg></span><span class="brand-text">Claude Playbook Quick Start</span></a>
+    <div class="progress">
+      <span class="progress-label">Your progress</span>
+      <span class="progress-track" id="progress" role="progressbar" aria-label="Frames completed" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><span class="progress-fill" id="progress-fill"></span></span>
+      <span class="progress-count" id="progress-count">0 of 5</span>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+
+
+<div class="shell">
+  <nav class="layers" id="layers" aria-label="Quick Start contents">
+    <div class="layers-head">
+      <span class="layers-title">Layers</span>
+      <button class="btn drawer-close" id="close-layers" type="button"><svg class="ico"><use href="#i-close"/></svg>Close</button>
+    </div>
+    <ol class="layer-tree">
+      <li><a class="layer layer-frame" href="#start" data-target="start"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-name">Start here</span></a></li>
+      <li data-frame-row="f1">
+        <a class="layer layer-frame" href="#frame-1" data-target="frame-1"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-num">01</span><span class="layer-name">Brief Claude</span><span class="layer-check"><svg class="ico"><use href="#i-check"/></svg></span><span class="sr-only layer-status"></span></a>
+        <ol class="layer-children">
+          <li><a class="layer" href="#what-claude-is" data-target="what-claude-is"><svg class="ico"><use href="#i-text"/></svg>What Claude is</a></li>
+          <li><a class="layer" href="#prompting" data-target="prompting"><svg class="ico"><use href="#i-text"/></svg>Prompts as briefs</a></li>
+        </ol>
+      </li>
+      <li data-frame-row="f2">
+        <a class="layer layer-frame" href="#frame-2" data-target="frame-2"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-num">02</span><span class="layer-name">GitHub setup</span><span class="layer-check"><svg class="ico"><use href="#i-check"/></svg></span><span class="sr-only layer-status"></span></a>
+        <ol class="layer-children">
+          <li><a class="layer" href="#git-basics" data-target="git-basics"><svg class="ico"><use href="#i-text"/></svg>Four Git words</a></li>
+          <li><a class="layer" href="#first-repo" data-target="first-repo"><svg class="ico"><use href="#i-text"/></svg>Account and repository</a></li>
+          <li><a class="layer" href="#github-pages" data-target="github-pages"><svg class="ico"><use href="#i-text"/></svg>Publish with Pages</a></li>
+        </ol>
+      </li>
+      <li data-frame-row="f3">
+        <a class="layer layer-frame" href="#frame-3" data-target="frame-3"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-num">03</span><span class="layer-name">Connect your tools</span><span class="layer-check"><svg class="ico"><use href="#i-check"/></svg></span><span class="sr-only layer-status"></span></a>
+        <ol class="layer-children">
+          <li><a class="layer" href="#project-setup" data-target="project-setup"><svg class="ico"><use href="#i-text"/></svg>Set up a Project</a></li>
+          <li><a class="layer" href="#claude-code" data-target="claude-code"><svg class="ico"><use href="#i-text"/></svg>Start Claude Code</a></li>
+          <li><a class="layer" href="#design-skills" data-target="design-skills"><svg class="ico"><use href="#i-text"/></svg>Design skills</a></li>
+        </ol>
+      </li>
+      <li data-frame-row="f4">
+        <a class="layer layer-frame" href="#frame-4" data-target="frame-4"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-num">04</span><span class="layer-name">Portfolio prompts</span><span class="layer-check"><svg class="ico"><use href="#i-check"/></svg></span><span class="sr-only layer-status"></span></a>
+        <ol class="layer-children">
+          <li><a class="layer" href="#p-strategy" data-target="p-strategy"><svg class="ico"><use href="#i-text"/></svg>Portfolio strategy</a></li>
+          <li><a class="layer" href="#p-case-study" data-target="p-case-study"><svg class="ico"><use href="#i-text"/></svg>Case study writing</a></li>
+          <li><a class="layer" href="#p-site" data-target="p-site"><svg class="ico"><use href="#i-text"/></svg>Portfolio website</a></li>
+        </ol>
+      </li>
+      <li data-frame-row="f5">
+        <a class="layer layer-frame" href="#frame-5" data-target="frame-5"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-num">05</span><span class="layer-name">Make it a habit</span><span class="layer-check"><svg class="ico"><use href="#i-check"/></svg></span><span class="sr-only layer-status"></span></a>
+        <ol class="layer-children">
+          <li><a class="layer" href="#the-loop" data-target="the-loop"><svg class="ico"><use href="#i-text"/></svg>The five-step loop</a></li>
+          <li><a class="layer" href="#starter-kit" data-target="starter-kit"><svg class="ico"><use href="#i-text"/></svg>Starter Kit</a></li>
+        </ol>
+      </li>
+      <li><a class="layer layer-frame" href="#glossary" data-target="glossary"><svg class="ico"><use href="#i-frame"/></svg><span class="layer-name">Glossary</span></a></li>
+    </ol>
+    <p class="layers-legend"><span><span class="ph-inline">[pink]</span> marks the parts you replace with your own details. Every prompt has a Copy button.</span></p>
+  </nav>
+
+  <main class="canvas" id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="start" aria-labelledby="hero-title">
+      <div class="selection" id="hero-sel">
+        <h1 id="hero-title">Design in HTML with Claude, one frame at a time.</h1>
+        <span class="handle tl"></span><span class="handle tr"></span><span class="handle bl"></span><span class="handle br"></span>
+        <span class="sel-size" id="sel-size" aria-hidden="true"></span>
+      </div>
+      <p class="lede">The essentials for UX designers who are new to code, Git, and AI prompting. Five short frames, one job each, and only the prompts you'll reach for first.</p>
+      <ul class="needs" aria-label="What you need">
+        <li><svg class="ico"><use href="#i-check"/></svg>A Claude account, Pro or Max</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>A free GitHub account</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>About an hour</li>
+      </ul>
+      <aside class="note try">
+        <span class="note-label">Condensed edition</span>
+        <p>This version keeps what you need to get started. When you want more depth, like Claude Max features, Chrome and Figma connections, or all eighteen Starter Kit prompts, open the <a href="/playbook/">full playbook</a>.</p>
+      </aside>
+
+      <h3 class="frames-title">What's inside</h3>
+      <ol class="frames">
+        <li data-frame-row="f1"><a class="frame-link" href="#frame-1"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>01 Brief Claude<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Write a good prompt</strong><span>What Claude is and how to brief it like a teammate.</span><span class="fmeta">About 10 min, reading</span></span></a></li>
+        <li data-frame-row="f2"><a class="frame-link" href="#frame-2"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>02 GitHub setup<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Put your work online</strong><span>An account, a repository, and a free site on GitHub Pages.</span><span class="fmeta">About 25 min, hands-on</span></span></a></li>
+        <li data-frame-row="f3"><a class="frame-link" href="#frame-3"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>03 Connect your tools<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Set up your tools</strong><span>A Project that remembers you, Claude Code for real files, and recommended design skills.</span><span class="fmeta">About 25 min, hands-on</span></span></a></li>
+        <li data-frame-row="f4"><a class="frame-link" href="#frame-4"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>04 Portfolio prompts<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Rebuild your portfolio</strong><span>Three prompts, from strategy to a published site.</span><span class="fmeta">Use as needed</span></span></a></li>
+        <li data-frame-row="f5"><a class="frame-link" href="#frame-5"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>05 Make it a habit<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>One loop, seven prompts</strong><span>The routine behind every task, and a Starter Kit to keep close.</span><span class="fmeta">About 5 min</span></span></a></li>
+        <li><a class="frame-link" href="#glossary"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>Glossary</span><span class="fbox"><strong>Plain-English terms</strong><span>Ten words you'll meet first, from "artifact" to "WCAG".</span><span class="fmeta">Reference</span></span></a></li>
+      </ol>
+    </section>
+
+    <!-- ============ FRAME 01 ============ -->
+    <section class="frame" id="frame-1" aria-labelledby="frame-1-title">
+      <header class="frame-header">
+        <h2 id="frame-1-title"><span class="h-num">01</span>Brief Claude like a teammate</h2>
+        <p class="lede">Learn how Claude works and how to brief it so the first answer lands close.</p>
+        <p class="frame-meta">About 10 minutes · 2 parts</p>
+      </header>
+
+      <h3 id="what-claude-is">What Claude is</h3>
+      <p>Claude is an AI model from Anthropic that you talk to in everyday language, at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> or in the desktop and mobile apps. Think of it as a fast, well-read collaborator who has never seen your project. It knows interface patterns, HTML, and accessibility. It knows nothing about your users or your taste until you tell it.</p>
+      <aside class="note tip">
+        <span class="note-label">Tip</span>
+        <p>Keep one topic per chat. Claude remembers the whole conversation, which helps when you iterate on one prototype and gets in the way when you switch topics.</p>
+      </aside>
+
+      <h3 id="prompting">Write prompts like design briefs</h3>
+      <p>A good prompt sets context, states the task, names the constraints, and describes the deliverable. Here's one, annotated like a spec.</p>
+      <figure class="code" data-kind="prompt" data-copy="rows">
+        <figcaption class="code-head"><span class="code-lang">Prompt</span><span class="code-title">A complete brief</span></figcaption>
+        <dl class="brief-rows">
+          <div class="brief-row"><dt><b>Context</b><span>Who you are, what the product is, and who uses it</span></dt><dd class="prompt" data-label="Context">I'm designing a mobile banking app for first-time savers aged 18 to 25.</dd></div>
+          <div class="brief-row"><dt><b>Task</b><span>The specific thing you want made or answered</span></dt><dd class="prompt" data-label="Task">Write onboarding copy for 3 intro screens that explain round-up savings.</dd></div>
+          <div class="brief-row"><dt><b>Constraints</b><span>Brand, tone, length, tech, and accessibility rules</span></dt><dd class="prompt" data-label="Constraints">Friendly but not childish. Headlines under 6 words, body under 20 words. No financial jargon.</dd></div>
+          <div class="brief-row"><dt><b>Format</b><span>What the answer should look like</span></dt><dd class="prompt" data-label="Format">A table with columns for screen, headline, body, and button label. Then 2 alternate headlines per screen.</dd></div>
+        </dl>
+      </figure>
+      <ul class="plain-list">
+        <li><strong>Attach screenshots.</strong> <span>Claude reads images, so show it the Figma frame or page you mean.</span></li>
+        <li><strong>Ask it to ask you.</strong> <span>End big requests with "Before you start, ask me any questions you need answered."</span></li>
+        <li><strong>Change one thing at a time.</strong> <span>Small follow-ups are easier to judge than a full rewrite.</span></li>
+      </ul>
+      <figure class="code" data-kind="prompt">
+        <figcaption class="code-head"><span class="code-lang">Prompts</span><span class="code-title">Two follow-ups you'll use constantly</span></figcaption>
+        <pre><code class="prompt">Keep everything exactly the same except [the one thing to change].
+That's not quite it. Here's what I expected instead: [describe it, or attach a screenshot].</code></pre>
+      </figure>
+      <aside class="note try">
+        <span class="note-label">Good to know</span>
+        <p>The Pro plan covers everything in this guide. Max mainly adds room to iterate for longer without hitting usage limits. Check <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> for current plans.</p>
+      </aside>
+
+      <div class="frame-done">
+        <button class="complete-btn" type="button" data-frame="f1" aria-pressed="false"><span class="box"><svg class="ico"><use href="#i-check"/></svg></span><span class="complete-label">Mark Frame 01 complete</span></button>
+        <a class="next-link" href="#frame-2">Next: GitHub setup<svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ FRAME 02 ============ -->
+    <section class="frame" id="frame-2" aria-labelledby="frame-2-title">
+      <header class="frame-header">
+        <h2 id="frame-2-title"><span class="h-num">02</span>Put your work on GitHub</h2>
+        <p class="lede">GitHub stores your portfolio files, keeps every version, and publishes your site for free. Everything here happens in your browser.</p>
+        <p class="frame-meta">About 25 minutes, hands-on · 3 parts</p>
+      </header>
+
+      <h3 id="git-basics">Four Git words</h3>
+      <dl class="terms">
+        <div><dt>Repository <small>(repo)</small></dt><dd><p>A project folder that remembers every change made to it.</p><p class="figma-note"><svg class="ico" aria-hidden="true"><use href="#i-frame"/></svg>In Figma: a file with version history built in.</p></dd></div>
+        <div><dt>Commit</dt><dd><p>A saved snapshot of your changes, with a short note about what changed.</p><p class="figma-note"><svg class="ico" aria-hidden="true"><use href="#i-frame"/></svg>In Figma: naming a version.</p></dd></div>
+        <div><dt>Push</dt><dd><p>Sending your commits from your computer up to GitHub.</p><p class="figma-note"><svg class="ico" aria-hidden="true"><use href="#i-frame"/></svg>In Figma: your edits syncing to the cloud.</p></dd></div>
+        <div><dt><code>main</code></dt><dd><p>Your repository's default version. Your live site publishes from it.</p><p class="figma-note"><svg class="ico" aria-hidden="true"><use href="#i-frame"/></svg>In Figma: the main file, not a branch.</p></dd></div>
+      </dl>
+
+      <h3 id="first-repo">Create your account and repository</h3>
+      <div class="steps-head"><span class="steps-bar"><span data-step-bar="qs-repo"></span></span><span class="step-count" data-step-count="qs-repo">0 of 4 done</span></div>
+      <ol class="steps" data-step-group="qs-repo">
+        <li class="step"><div class="step-body"><strong>Sign up at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>.</strong><p>Your username becomes your site address, <code>username.github.io</code>, so pick something close to your name.</p></div><label class="step-check" for="step-qs-repo-1"><input type="checkbox" id="step-qs-repo-1" data-step="qs-repo-1">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Turn on two-factor authentication.</strong><p>Settings → Password and authentication. GitHub will ask you to do this anyway.</p></div><label class="step-check" for="step-qs-repo-2"><input type="checkbox" id="step-qs-repo-2" data-step="qs-repo-2">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Create a repository named <code>username.github.io</code>.</strong><p>Click + → New repository. Keep it Public, turn on Add a README file, and click Create repository.</p></div><label class="step-check" for="step-qs-repo-3"><input type="checkbox" id="step-qs-repo-3" data-step="qs-repo-3">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Add your homepage.</strong><p>Click Add file → Create new file, name it <code>index.html</code>, paste the starter below, then click Commit changes.</p></div><label class="step-check" for="step-qs-repo-4"><input type="checkbox" id="step-qs-repo-4" data-step="qs-repo-4">Done</label></li>
+      </ol>
+      <figure class="code" data-kind="code">
+        <figcaption class="code-head"><span class="code-lang">HTML</span><span class="code-title">index.html starter</span></figcaption>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Your Name, UX Designer&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Your Name&lt;/h1&gt;
+  &lt;p&gt;UX designer focused on accessible, research-driven products.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </figure>
+
+      <h3 id="github-pages">Publish with GitHub Pages</h3>
+      <div class="steps-head"><span class="steps-bar"><span data-step-bar="qs-pages"></span></span><span class="step-count" data-step-count="qs-pages">0 of 3 done</span></div>
+      <ol class="steps" data-step-group="qs-pages">
+        <li class="step"><div class="step-body"><strong>Open Settings → Pages.</strong><p>Settings is a tab at the top of your repository.</p></div><label class="step-check" for="step-qs-pages-1"><input type="checkbox" id="step-qs-pages-1" data-step="qs-pages-1">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Publish from <code>main</code>.</strong><p>Set Source to Deploy from a branch, choose <code>main</code> and <code>/ (root)</code>, then click Save.</p></div><label class="step-check" for="step-qs-pages-2"><input type="checkbox" id="step-qs-pages-2" data-step="qs-pages-2">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Wait a minute, then visit your site.</strong><p>Refresh the Pages screen to see your address. From now on, every commit to <code>main</code> updates the site.</p></div><label class="step-check" for="step-qs-pages-3"><input type="checkbox" id="step-qs-pages-3" data-step="qs-pages-3">Done</label></li>
+      </ol>
+      <aside class="note heads">
+        <span class="note-label">Seeing a 404?</span>
+        <p>Check that the file is named exactly <code>index.html</code> and sits at the top level of the repository, not in a folder. Then wait a few minutes and refresh.</p>
+      </aside>
+      <h4 class="minor">Stuck? Ask Claude</h4>
+      <ul class="followups">
+        <li><span class="prompt">I'm setting up GitHub Pages for the first time and I'm stuck on this step: [describe it, or attach a screenshot]. Tell me exactly what to click next.</span></li>
+      </ul>
+
+      <div class="frame-done">
+        <button class="complete-btn" type="button" data-frame="f2" aria-pressed="false"><span class="box"><svg class="ico"><use href="#i-check"/></svg></span><span class="complete-label">Mark Frame 02 complete</span></button>
+        <a class="next-link" href="#frame-3">Next: Connect your tools<svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ FRAME 03 ============ -->
+    <section class="frame" id="frame-3" aria-labelledby="frame-3-title">
+      <header class="frame-header">
+        <h2 id="frame-3-title"><span class="h-num">03</span>Connect your tools</h2>
+        <p class="lede">Two connections cover most of your work: a Project that remembers who you are, and Claude Code to edit your real site. A set of recommended skills then adds planning, reviews, and polish.</p>
+        <p class="frame-meta">About 25 minutes, hands-on · 3 parts</p>
+      </header>
+
+      <h3 id="project-setup">Set up a Project</h3>
+      <p>A Project keeps instructions and files attached to every chat inside it, so you only explain yourself once.</p>
+      <div class="steps-head"><span class="steps-bar"><span data-step-bar="qs-project"></span></span><span class="step-count" data-step-count="qs-project">0 of 3 done</span></div>
+      <ol class="steps" data-step-group="qs-project">
+        <li class="step"><div class="step-body"><strong>Create a Project.</strong><p>At claude.ai, open Projects and create one called "Portfolio 2026".</p></div><label class="step-check" for="step-qs-project-1"><input type="checkbox" id="step-qs-project-1" data-step="qs-project-1">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Paste in the instructions below.</strong><p>Fill in the pink parts first. Claude reads them at the start of every chat in the Project.</p></div><label class="step-check" for="step-qs-project-2"><input type="checkbox" id="step-qs-project-2" data-step="qs-project-2">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Add your repository.</strong><p>In the Project's knowledge section, click + → GitHub. If asked, allow only your portfolio repository.</p></div><label class="step-check" for="step-qs-project-3"><input type="checkbox" id="step-qs-project-3" data-step="qs-project-3">Done</label></li>
+      </ol>
+      <figure class="code" data-kind="prompt">
+        <figcaption class="code-head"><span class="code-lang">Project instructions</span><span class="code-title">Portfolio Project setup</span></figcaption>
+        <pre><code class="prompt">About me: I'm a UX designer with [X years] of experience in [your focus areas]. I'm learning HTML, CSS, and Git, so explain technical steps simply and tell me what each one does.
+Goal: Rebuild my portfolio as a hand-coded website hosted on GitHub Pages.
+How I like answers: A short explanation first, then the code. Use plain HTML and CSS in a single file unless I ask otherwise. Everything must meet WCAG 2.2 AA.
+When unsure: Ask me before guessing.</code></pre>
+      </figure>
+
+      <h3 id="claude-code">Start Claude Code</h3>
+      <p>Claude Code works inside a folder on your computer. It edits files and saves your work to GitHub, and it asks before it changes anything.</p>
+      <div class="steps-head"><span class="steps-bar"><span data-step-bar="qs-code"></span></span><span class="step-count" data-step-count="qs-code">0 of 3 done</span></div>
+      <ol class="steps" data-step-group="qs-code">
+        <li class="step"><div class="step-body"><strong>Copy your repository to your computer.</strong><p>Install <a href="https://desktop.github.com" target="_blank" rel="noopener">GitHub Desktop</a>, sign in, then choose File → Clone repository and pick a folder such as Documents/portfolio.</p></div><label class="step-check" for="step-qs-code-1"><input type="checkbox" id="step-qs-code-1" data-step="qs-code-1">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Open it in the Claude desktop app.</strong><p>Go to the Code tab and choose that folder. Prefer VS Code? Install the Claude Code extension instead.</p></div><label class="step-check" for="step-qs-code-2"><input type="checkbox" id="step-qs-code-2" data-step="qs-code-2">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Send your first prompt.</strong><p>The one below only reads, so nothing changes yet.</p></div><label class="step-check" for="step-qs-code-3"><input type="checkbox" id="step-qs-code-3" data-step="qs-code-3">Done</label></li>
+      </ol>
+      <figure class="code" data-kind="prompt">
+        <figcaption class="code-head"><span class="code-lang">Prompt</span><span class="code-title">First Claude Code session</span></figcaption>
+        <pre><code class="prompt">Look at the files in this folder and explain how my portfolio site is organized, in plain English. Don't change anything yet. Then suggest the three most useful improvements I could make.</code></pre>
+      </figure>
+      <aside class="note heads">
+        <span class="note-label">Heads up</span>
+        <p>Commit your work before asking for big changes, so you can always go back. Read each permission request before you approve it.</p>
+      </aside>
+
+      <h3 id="design-skills">Add the recommended skills</h3>
+      <p>Skills teach Claude Code a repeatable way of working. These seven free plugins cover the whole loop: <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">Grilling</a>, <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a>, and <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Agent Skills</a> help you think a change through before building; Anthropic's <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design" target="_blank" rel="noopener">Frontend Design</a> and <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">UI UX Pro Max</a> shape how your pages look; Anthropic's <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/design" target="_blank" rel="noopener">Design</a> plugin and <a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">Impeccable</a> critique and polish them.</p>
+      <figure class="code" data-kind="code">
+        <figcaption class="code-head"><span class="code-lang">Terminal</span><span class="code-title">Add and install the recommended skills</span></figcaption>
+        <pre><code class="language-bash"># Add the marketplaces (Anthropic's official one is already there)
+claude plugin marketplace add pbakaus/impeccable
+claude plugin marketplace add addyosmani/agent-skills
+claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+claude plugin marketplace add anthropics/knowledge-work-plugins
+# Install the plugins
+claude plugin install mattpocock-skills@claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
+claude plugin install agent-skills@addy-agent-skills
+claude plugin install frontend-design@claude-plugins-official
+claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+claude plugin install design@knowledge-work-plugins
+claude plugin install impeccable@impeccable</code></pre>
+      </figure>
+      <p>These need the terminal version of Claude Code. In VS Code, type <code>/plugins</code> to add and install them from a dialog instead. Restart Claude Code when you're done. UI UX Pro Max also needs Python 3.</p>
+
+      <div class="frame-done">
+        <button class="complete-btn" type="button" data-frame="f3" aria-pressed="false"><span class="box"><svg class="ico"><use href="#i-check"/></svg></span><span class="complete-label">Mark Frame 03 complete</span></button>
+        <a class="next-link" href="#frame-4">Next: Portfolio prompts<svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ FRAME 04 ============ -->
+    <section class="frame" id="frame-4" aria-labelledby="frame-4-title">
+      <header class="frame-header">
+        <h2 id="frame-4-title"><span class="h-num">04</span>Three portfolio prompts</h2>
+        <p class="lede">From a plan to a live site. Use them in order, since each builds on the last.</p>
+        <p class="frame-meta">Use as needed · 3 prompts</p>
+      </header>
+      <aside class="note tip">
+        <span class="note-label">Tip</span>
+        <p>Paste your résumé, rough notes, or a screenshot below any prompt. Claude can only use what it can see. Remove anything confidential first.</p>
+      </aside>
+
+      <div class="prompt-entry">
+        <h3 id="p-strategy">1. Portfolio strategy</h3>
+        <p class="use-when"><b>Use it when</b> you want to decide what your portfolio should say before designing anything.</p>
+        <figure class="code" data-kind="prompt">
+          <figcaption class="code-head"><span class="code-lang">Prompt 1 of 3</span><span class="code-title">Portfolio strategy</span></figcaption>
+          <pre><code class="prompt">I'm a UX designer with [X years] of experience specializing in [your focus areas]. Help me define a portfolio strategy that showcases my skills to [target employers/clients]. My strongest projects include [project names].</code></pre>
+        </figure>
+        <ul class="followups">
+          <li><span class="prompt">Which 3 projects should lead, and in what order? Explain the story they tell together.</span></li>
+        </ul>
+      </div>
+
+      <div class="prompt-entry">
+        <h3 id="p-case-study">2. Case study writing</h3>
+        <p class="use-when"><b>Use it when</b> you have a project and some notes, and need a story someone can skim.</p>
+        <figure class="code" data-kind="prompt">
+          <figcaption class="code-head"><span class="code-lang">Prompt 2 of 3</span><span class="code-title">Case study writing</span></figcaption>
+          <pre><code class="prompt">Help me write a UX case study for a project called [Project Name]. The problem was [describe problem]. My role was [your role]. The process I followed was [describe process]. The outcome was [results/metrics].</code></pre>
+        </figure>
+        <ul class="followups">
+          <li><span class="prompt">Cut this to a version someone can skim in 90 seconds, with headings and a TL;DR at the top.</span></li>
+        </ul>
+      </div>
+
+      <div class="prompt-entry">
+        <h3 id="p-site">3. Portfolio website build</h3>
+        <p class="use-when"><b>Use it when</b> your strategy and one case study are ready, and you want the full site.</p>
+        <figure class="code" data-kind="prompt">
+          <figcaption class="code-head"><span class="code-lang">Prompt 3 of 3</span><span class="code-title">Portfolio website build</span></figcaption>
+          <pre><code class="prompt">Build me a personal UX portfolio website in HTML, CSS, and vanilla JavaScript. Include sections for: About Me, Case Studies, Skills, and Contact. My name is [Name], my tagline is [tagline], and my color palette is [colors].</code></pre>
+        </figure>
+        <ul class="followups">
+          <li><span class="prompt">Check the whole site for accessibility issues and fix them. List what you changed.</span></li>
+        </ul>
+        <p class="use-when"><b>Changing the site later?</b> Agree on a spec first with Agent Skills, then run <code>/plan</code> and <code>/build</code> one small step at a time.</p>
+        <ul class="followups">
+          <li><span class="prompt">/spec I want to refactor [what, e.g. the navigation] on my portfolio. Keep my content, colors, and fonts. Ask me questions until the spec is clear, and don't write any code yet.</span></li>
+        </ul>
+      </div>
+
+      <aside class="note heads">
+        <span class="note-label">Before you publish</span>
+        <p>Check every fact Claude writes about you, especially numbers, dates, and job titles. Claude only knows what you've told it.</p>
+      </aside>
+
+      <div class="frame-done">
+        <button class="complete-btn" type="button" data-frame="f4" aria-pressed="false"><span class="box"><svg class="ico"><use href="#i-check"/></svg></span><span class="complete-label">Mark Frame 04 complete</span></button>
+        <a class="next-link" href="#frame-5">Next: Make it a habit<svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ FRAME 05 ============ -->
+    <section class="frame" id="frame-5" aria-labelledby="frame-5-title">
+      <header class="frame-header">
+        <h2 id="frame-5-title"><span class="h-num">05</span>Make it a habit</h2>
+        <p class="lede">One routine behind every task, and seven prompts to keep close.</p>
+        <p class="frame-meta">About 5 minutes, then ongoing · 2 parts</p>
+      </header>
+
+      <h3 id="the-loop">The five-step loop behind every task</h3>
+      <p>When a result disappoints, one of these steps usually got skipped.</p>
+      <div class="loop-wrap">
+        <ol class="loop">
+          <li><strong>Brief</strong><p>Context, task, constraints, and format. Attach a screenshot.</p></li>
+          <li><strong>Generate</strong><p>Let Claude draft. Ask for options when you're exploring.</p></li>
+          <li><strong>Review</strong><p>Test it in a browser, at phone width, and with a keyboard.</p></li>
+          <li><strong>Refine</strong><p>Change one or two things at a time. Say what to keep.</p></li>
+          <li><strong>Ship</strong><p>Save it to your repo with a clear commit message.</p></li>
+        </ol>
+        <div class="loop-return" aria-hidden="true"><span>Then repeat for the next change</span></div>
+      </div>
+
+      <h3 id="starter-kit">Starter Kit</h3>
+      <p>Seven prompts worth keeping close. The last two use the design skills from <a href="#design-skills">Frame 03</a>. Copy them into your notes or a <code>prompts.md</code> file in your repository.</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" type="button" id="kit-copy"><svg class="ico"><use href="#i-copy"/></svg><span class="kit-copy-label">Copy all 7 prompts</span></button>
+        <button class="btn" type="button" id="kit-download" hidden><svg class="ico"><use href="#i-download"/></svg>Download as Markdown</button>
+      </div>
+      <label class="sr-only" for="kit-fallback">Prompt Starter Kit as text</label>
+      <textarea class="kit-fallback" id="kit-fallback" readonly hidden></textarea>
+      <ol class="kit" id="kit-list">
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">01</span><span class="code-title kit-title">Brief me first</span><span class="chip">Any task</span></figcaption><pre><code class="prompt">Before you start, ask me up to 5 questions you need answered to do this well. The task: [describe what you need].</code></pre></figure></li>
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">02</span><span class="code-title kit-title">HTML prototype</span><span class="chip">Prototype</span></figcaption><pre><code class="prompt">Build a single-file HTML prototype of [screen or flow]. Include [UI elements]. Style: [visual direction]. Make it responsive, usable with a keyboard, and meet WCAG 2.2 AA color contrast.</code></pre></figure></li>
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">03</span><span class="code-title kit-title">Change one thing</span><span class="chip">Iterate</span></figcaption><pre><code class="prompt">Keep everything exactly the same except: [the specific change]. Then list what you changed.</code></pre></figure></li>
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">04</span><span class="code-title kit-title">Accessibility audit</span><span class="chip">Accessibility</span></figcaption><pre><code class="prompt">Audit this [code or screenshot] against WCAG 2.2 AA. Return a table with the issue, the success criterion, severity, and how to fix it.</code></pre></figure></li>
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">05</span><span class="code-title kit-title">Fix an error</span><span class="chip">Learn</span></figcaption><pre><code class="prompt">I got this error while [what you were doing]: [paste the error]. Explain what it means in plain English and give me the exact steps to fix it.</code></pre></figure></li>
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">06</span><span class="code-title kit-title">Design critique</span><span class="chip">UI UX Pro Max</span></figcaption><pre><code class="prompt">Use the ui-ux-pro-max skill to critique [screen or page]. Check it against its UX guidelines and accessibility rules, list the 5 biggest issues by severity, and suggest one refinement for each.</code></pre></figure></li>
+        <li class="kit-item"><figure class="code" data-kind="prompt"><figcaption class="code-head"><span class="kit-num">07</span><span class="code-title kit-title">Polish pass</span><span class="chip">Impeccable</span></figcaption><pre><code class="prompt">/impeccable polish [page or component]</code></pre></figure></li>
+      </ol>
+
+      <div class="frame-done">
+        <button class="complete-btn" type="button" data-frame="f5" aria-pressed="false"><span class="box"><svg class="ico"><use href="#i-check"/></svg></span><span class="complete-label">Mark Frame 05 complete</span></button>
+        <a class="next-link" href="#glossary">Glossary<svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ GLOSSARY ============ -->
+    <section class="frame" id="glossary" aria-labelledby="glossary-title">
+      <header class="frame-header">
+        <h2 id="glossary-title">Plain-English glossary</h2>
+        <p class="lede">The words you'll meet first. Git terms are in <a href="#git-basics">Frame 02</a>.</p>
+      </header>
+      <dl class="glossary">
+        <div><dt>Prompt</dt><dd>The message you send Claude. A good prompt reads like a design brief.</dd></div>
+        <div><dt>Context</dt><dd>Everything Claude can see while it answers: the conversation, attached files, and Project instructions.</dd></div>
+        <div><dt>Artifact</dt><dd>Something Claude makes that opens in its own panel, like a web page or diagram. You can share it with a link.</dd></div>
+        <div><dt>HTML and CSS</dt><dd>HTML is a page's structure. CSS is its styling: color, type, spacing, and layout.</dd></div>
+        <div><dt>Responsive</dt><dd>A layout that adapts to any screen size, from phone to desktop.</dd></div>
+        <div><dt>Accessibility and WCAG</dt><dd>Designing so people with disabilities can use your work. WCAG 2.2 AA is the standard most teams aim for.</dd></div>
+        <div><dt>GitHub Pages</dt><dd>GitHub's free hosting for websites, published straight from a repository.</dd></div>
+        <div><dt>Claude Code</dt><dd>Claude working inside a folder on your computer, editing real files after you approve.</dd></div>
+        <div><dt>Skill</dt><dd>A saved set of instructions that teaches Claude a way of working, like a design review. You add skills to Claude Code as plugins.</dd></div>
+        <div><dt>Spec</dt><dd>A short written plan: what you're building, why, and how you'll know it's done.</dd></div>
+      </dl>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Claude Playbook Quick Start.</strong> The condensed edition of the <a href="/playbook/">UX Designer's Claude Playbook</a>. Last reviewed October 2026.</p>
+      <p>Menus and features change. If something here doesn't match what you see, ask Claude: "This guide says [what it says], but I see [what you see]. What changed?"</p>
+    </footer>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+<script type="module" src="/playbook/js/main.js"></script>
+</body>
+</html>
