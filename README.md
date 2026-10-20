@@ -18,3 +18,14 @@ The playbook loads native ES modules and root-relative assets, so serve the repo
 npx serve .
 # then open http://localhost:3000/playbook/
 ```
+
+## Publish an edition as an artifact
+
+`scripts/build-artifact.py` turns an edition into the single file claude.ai expects (CSS inlined, modules flattened, site links made absolute):
+
+```sh
+python3 scripts/build-artifact.py playbook/condensed/index.html quick-start.html \
+  --link /playbook/=https://claude.ai/artifact/BADbt1Tm6tmfVFh4rm6nzQ
+```
+
+Published copies: [full playbook](https://claude.ai/artifact/BADbt1Tm6tmfVFh4rm6nzQ), [Quick Start](https://claude.ai/artifact/5NEy79kZWPk9Wq748YpUP1).
