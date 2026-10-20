@@ -122,7 +122,7 @@
       <ol class="frames">
         <li data-frame-row="f1"><a class="frame-link" href="#frame-1"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>01 Brief Claude<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Write a good prompt</strong><span>What Claude is and how to brief it like a teammate.</span><span class="fmeta">About 10 min, reading</span></span></a></li>
         <li data-frame-row="f2"><a class="frame-link" href="#frame-2"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>02 GitHub setup<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Put your work online</strong><span>An account, a repository, and a free site on GitHub Pages.</span><span class="fmeta">About 25 min, hands-on</span></span></a></li>
-        <li data-frame-row="f3"><a class="frame-link" href="#frame-3"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>03 Connect your tools<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Set up your tools</strong><span>A Project that remembers you, Claude Code for real files, and three design skills.</span><span class="fmeta">About 20 min, hands-on</span></span></a></li>
+        <li data-frame-row="f3"><a class="frame-link" href="#frame-3"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>03 Connect your tools<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Set up your tools</strong><span>A Project that remembers you, Claude Code for real files, and recommended design skills.</span><span class="fmeta">About 25 min, hands-on</span></span></a></li>
         <li data-frame-row="f4"><a class="frame-link" href="#frame-4"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>04 Portfolio prompts<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Rebuild your portfolio</strong><span>Three prompts, from strategy to a published site.</span><span class="fmeta">Use as needed</span></span></a></li>
         <li data-frame-row="f5"><a class="frame-link" href="#frame-5"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>05 Make it a habit<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>One loop, seven prompts</strong><span>The routine behind every task, and a Starter Kit to keep close.</span><span class="fmeta">About 5 min</span></span></a></li>
         <li><a class="frame-link" href="#glossary"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>Glossary</span><span class="fbox"><strong>Plain-English terms</strong><span>Ten words you'll meet first, from "artifact" to "WCAG".</span><span class="fmeta">Reference</span></span></a></li>
@@ -242,8 +242,8 @@ That's not quite it. Here's what I expected instead: [describe it, or attach a s
     <section class="frame" id="frame-3" aria-labelledby="frame-3-title">
       <header class="frame-header">
         <h2 id="frame-3-title"><span class="h-num">03</span>Connect your tools</h2>
-        <p class="lede">Two connections cover most of your work: a Project that remembers who you are, and Claude Code to edit your real site. Three design skills then add reviews and planning.</p>
-        <p class="frame-meta">About 20 minutes, hands-on · 3 parts</p>
+        <p class="lede">Two connections cover most of your work: a Project that remembers who you are, and Claude Code to edit your real site. A set of recommended skills then adds planning, reviews, and polish.</p>
+        <p class="frame-meta">About 25 minutes, hands-on · 3 parts</p>
       </header>
 
       <h3 id="project-setup">Set up a Project</h3>
@@ -279,16 +279,23 @@ When unsure: Ask me before guessing.</code></pre>
         <p>Commit your work before asking for big changes, so you can always go back. Read each permission request before you approve it.</p>
       </aside>
 
-      <h3 id="design-skills">Add three design skills</h3>
-      <p>Skills teach Claude Code a repeatable way of working. These three are free plugins: <a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">Impeccable</a> reviews and polishes your design, <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Agent Skills</a> writes a spec before bigger changes, and <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">UI UX Pro Max</a> critiques and refines layout, color, and type.</p>
+      <h3 id="design-skills">Add the recommended skills</h3>
+      <p>Skills teach Claude Code a repeatable way of working. These seven free plugins cover the whole loop: <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">Grilling</a>, <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a>, and <a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Agent Skills</a> help you think a change through before building; Anthropic's <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design" target="_blank" rel="noopener">Frontend Design</a> and <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">UI UX Pro Max</a> shape how your pages look; Anthropic's <a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/design" target="_blank" rel="noopener">Design</a> plugin and <a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">Impeccable</a> critique and polish them.</p>
       <figure class="code" data-kind="code">
-        <figcaption class="code-head"><span class="code-lang">Terminal</span><span class="code-title">Add and install the three design skills</span></figcaption>
-        <pre><code class="language-bash">claude plugin marketplace add pbakaus/impeccable
+        <figcaption class="code-head"><span class="code-lang">Terminal</span><span class="code-title">Add and install the recommended skills</span></figcaption>
+        <pre><code class="language-bash"># Add the marketplaces (Anthropic's official one is already there)
+claude plugin marketplace add pbakaus/impeccable
 claude plugin marketplace add addyosmani/agent-skills
 claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
-claude plugin install impeccable@impeccable
+claude plugin marketplace add anthropics/knowledge-work-plugins
+# Install the plugins
+claude plugin install mattpocock-skills@claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
 claude plugin install agent-skills@addy-agent-skills
-claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill</code></pre>
+claude plugin install frontend-design@claude-plugins-official
+claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+claude plugin install design@knowledge-work-plugins
+claude plugin install impeccable@impeccable</code></pre>
       </figure>
       <p>These need the terminal version of Claude Code. In VS Code, type <code>/plugins</code> to add and install them from a dialog instead. Restart Claude Code when you're done. UI UX Pro Max also needs Python 3.</p>
 

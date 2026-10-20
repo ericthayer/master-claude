@@ -137,7 +137,7 @@
       <ol class="frames">
         <li data-frame-row="f1"><a class="frame-link" href="#frame-1"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>01 Getting started<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Learn to brief Claude</strong><span>What Claude is, how to prompt it, UX tasks it handles well, and Max features.</span><span class="fmeta">About 25 min, reading</span></span></a></li>
         <li data-frame-row="f2"><a class="frame-link" href="#frame-2"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>02 GitHub setup<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Put your work online</strong><span>Git in plain English, your first repository, and a free site on GitHub Pages.</span><span class="fmeta">About 45 min, hands-on</span></span></a></li>
-        <li data-frame-row="f3"><a class="frame-link" href="#frame-3"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>03 Integrations<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Connect your tools</strong><span>GitHub, Claude Code, three design skills, Chrome, Figma, and a system for reusing prompts.</span><span class="fmeta">About 40 min, hands-on</span></span></a></li>
+        <li data-frame-row="f3"><a class="frame-link" href="#frame-3"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>03 Integrations<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Connect your tools</strong><span>GitHub, Claude Code, recommended design skills, Chrome, Figma, and a system for reusing prompts.</span><span class="fmeta">About 45 min, hands-on</span></span></a></li>
         <li data-frame-row="f4"><a class="frame-link" href="#frame-4"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>04 Prompt library<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Rebuild your portfolio</strong><span>Six scripted prompts, from strategy to a published site, that fill in with your details.</span><span class="fmeta">Use as needed</span></span></a></li>
         <li data-frame-row="f5"><a class="frame-link" href="#frame-5"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>05 Workflow guide<span class="fdone"><svg class="ico"><use href="#i-check"/></svg>Done</span></span><span class="fbox"><strong>Make it a habit</strong><span>Daily and weekly routines, plus a Starter Kit of 18 prompts to keep close.</span><span class="fmeta">About 15 min, then ongoing</span></span></a></li>
         <li><a class="frame-link" href="#glossary"><span class="fname"><svg class="ico"><use href="#i-frame"/></svg>Glossary</span><span class="fbox"><strong>Plain-English terms</strong><span>Eighteen words you'll meet along the way, from "artifact" to "WCAG".</span><span class="fmeta">Reference</span></span></a></li>
@@ -491,7 +491,7 @@ git push</code></pre>
       <header class="frame-header">
         <h2 id="frame-3-title"><span class="h-num">03</span>Configuring Claude plugins &amp; integrations</h2>
         <p class="lede">Connect Claude to the tools you already use, so it can read your files, see your designs, and help you ship changes. Add design skills for reviews and planning, then set up a daily workspace and a system for reusing your best prompts.</p>
-        <p class="frame-meta">About 40 minutes · 7 parts</p>
+        <p class="frame-meta">About 45 minutes · 7 parts</p>
       </header>
 
       <h3 id="tool-map">Which tool does what</h3>
@@ -503,7 +503,7 @@ git push</code></pre>
             <tr><td><strong>Claude app</strong><br><small>web, desktop, mobile</small></td><td>Chats, Projects, and Artifacts</td><td>Thinking through problems, writing, quick one-page prototypes</td></tr>
             <tr><td><strong>Claude Design</strong></td><td>A visual canvas for prototypes, slides, and one-pagers</td><td>Exploring several visual directions quickly</td></tr>
             <tr><td><strong>Claude Code</strong></td><td>Works directly with files in a folder on your computer</td><td>Building and updating your real portfolio site</td></tr>
-            <tr><td><strong>Design skills</strong><br><small>Impeccable, Agent Skills, UI UX Pro Max</small></td><td>Add design review, polish, and spec-first planning to Claude Code</td><td>Critiquing a page, planning a bigger change, polishing before you publish</td></tr>
+            <tr><td><strong>Recommended skills</strong><br><small>Seven plugins, from planning to polish</small></td><td>Add planning, design critique, polish, and spec-first building to Claude Code</td><td>Stress-testing a plan, building and critiquing pages, polishing before you publish</td></tr>
             <tr><td><strong>GitHub integration</strong></td><td>Shares files from a repository with Claude</td><td>Asking questions about your site's code in a chat</td></tr>
             <tr><td><strong>Claude in Chrome</strong></td><td>Lets Claude read and act on the page in your browser</td><td>Reviewing your live site or a competitor's flow</td></tr>
             <tr><td><strong>Connectors</strong></td><td>Link Claude to apps like Figma, Google Drive, and Notion</td><td>Pulling real designs and docs into a conversation</td></tr>
@@ -547,39 +547,48 @@ claude</code></pre>
         <p>Commit your work before asking for big changes, so you can always go back. Read each permission request before approving it. Claude tells you exactly which file it wants to change or which command it wants to run.</p>
       </aside>
 
-      <h3 id="design-skills">Add three design skills</h3>
-      <p>A skill teaches Claude a repeatable way of working, like a design review or a planning routine. These three are free and open source. Each comes as a plugin you add to Claude Code with a couple of commands, once, and then use in any project.</p>
+      <h3 id="design-skills">Add the recommended skills</h3>
+      <p>A skill teaches Claude a repeatable way of working, like a design review or a planning routine. These seven are free and open source, and each comes as a plugin you add to Claude Code once and then use in any project. They're listed in the order you'll reach for them: plan, build, then review.</p>
       <div class="table-wrap wide">
         <table>
           <thead><tr><th scope="col">Skill</th><th scope="col">Use it for</th><th scope="col">How you start it</th></tr></thead>
           <tbody>
-            <tr><td><strong><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">Impeccable</a></strong></td><td>Design review and polish: a UX critique, a technical audit for accessibility and responsiveness, and a final pass before you ship</td><td><code>/impeccable critique</code><br><code>/impeccable audit</code><br><code>/impeccable polish</code></td></tr>
-            <tr><td><strong><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Agent Skills</a></strong></td><td>Spec-driven development: agree on a written spec, then plan and build in small steps you can review</td><td><code>/spec</code>, then <code>/plan</code> and <code>/build</code></td></tr>
-            <tr><td><strong><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">UI UX Pro Max</a></strong></td><td>Design critique and refinement, backed by a library of UI styles, color palettes, font pairings, and UX guidelines</td><td>Starts on its own when you ask for design work</td></tr>
+            <tr><td><strong><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">Grilling</a></strong><br><small>Plan · Matt Pocock's skills</small></td><td>Stress-testing a plan, strategy, or case study: Claude interviews you one question at a time until every decision is settled</td><td><code>/grill-me</code></td></tr>
+            <tr><td><strong><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a></strong><br><small>Plan</small></td><td>A steadier way of working in Claude Code: it brainstorms with you before building, writes a plan, and debugs step by step</td><td>Starts on its own</td></tr>
+            <tr><td><strong><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Agent Skills</a></strong><br><small>Plan</small></td><td>Spec-driven development for bigger changes: agree on a written spec, then plan and build in small steps you can review</td><td><code>/spec</code>, then <code>/plan</code> and <code>/build</code></td></tr>
+            <tr><td><strong><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design" target="_blank" rel="noopener">Frontend Design</a></strong><br><small>Build · Anthropic</small></td><td>Building pages with a distinctive look instead of generic AI styling</td><td>Starts on its own when you ask Claude to build UI</td></tr>
+            <tr><td><strong><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">UI UX Pro Max</a></strong><br><small>Build</small></td><td>Exploring and refining styles, palettes, and font pairings, backed by a library of UX guidelines</td><td>Starts on its own when you ask for design work</td></tr>
+            <tr><td><strong><a href="https://github.com/anthropics/knowledge-work-plugins/tree/main/design" target="_blank" rel="noopener">Design</a></strong><br><small>Review · Anthropic</small></td><td>Structured design critique, accessibility reviews, and UX copy</td><td><code>/design-critique</code><br><code>/accessibility-review</code><br><code>/ux-copy</code></td></tr>
+            <tr><td><strong><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">Impeccable</a></strong><br><small>Review</small></td><td>A UX critique, a technical audit for accessibility and responsiveness, and a final polish pass before you ship</td><td><code>/impeccable critique</code><br><code>/impeccable audit</code><br><code>/impeccable polish</code></td></tr>
           </tbody>
         </table>
       </div>
       <div class="steps-head"><span class="steps-bar"><span data-step-bar="int-skills"></span></span><span class="step-count" data-step-count="int-skills">0 of 4 done</span></div>
       <ol class="steps" data-step-group="int-skills">
-        <li class="step"><div class="step-body"><strong>Add the three marketplaces.</strong><p>Each skill is published from a GitHub repository that Claude Code calls a marketplace. Run the first three lines below in the terminal; they need the terminal version of Claude Code from the optional step above. In VS Code, you can instead type <code>/plugins</code> and add each repository on the Marketplaces tab.</p></div><label class="step-check" for="step-int-skills-1"><input type="checkbox" id="step-int-skills-1" data-step="int-skills-1">Done</label></li>
-        <li class="step"><div class="step-body"><strong>Install the plugins.</strong><p>Run the last three lines. They install for your user account, so the skills work in every project. Once the marketplaces are added, the desktop app can also install them: click + next to the prompt box and choose Add plugins.</p></div><label class="step-check" for="step-int-skills-2"><input type="checkbox" id="step-int-skills-2" data-step="int-skills-2">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Add the marketplaces.</strong><p>Each plugin is published from a GitHub repository that Claude Code calls a marketplace. Claude Code adds Anthropic's official one the first time you open it, so run the first four lines below in the terminal to add the rest. They need the terminal version of Claude Code from the optional step above. In VS Code, you can instead type <code>/plugins</code> and add each repository on the Marketplaces tab.</p></div><label class="step-check" for="step-int-skills-1"><input type="checkbox" id="step-int-skills-1" data-step="int-skills-1">Done</label></li>
+        <li class="step"><div class="step-body"><strong>Install the plugins.</strong><p>Run the last seven lines. They install for your user account, so the skills work in every project. Once the marketplaces are added, the desktop app can also install them: click + next to the prompt box and choose Add plugins.</p></div><label class="step-check" for="step-int-skills-2"><input type="checkbox" id="step-int-skills-2" data-step="int-skills-2">Done</label></li>
         <li class="step"><div class="step-body"><strong>Restart Claude Code.</strong><p>UI UX Pro Max also needs Python 3 on your computer. If Claude says it's missing, ask it to help you install Python.</p></div><label class="step-check" for="step-int-skills-3"><input type="checkbox" id="step-int-skills-3" data-step="int-skills-3">Done</label></li>
         <li class="step"><div class="step-body"><strong>Run <code>/impeccable init</code> in your portfolio folder.</strong><p>It asks a few questions about your work and saves the answers in a <code>PRODUCT.md</code> file, so every review knows who the site is for.</p></div><label class="step-check" for="step-int-skills-4"><input type="checkbox" id="step-int-skills-4" data-step="int-skills-4">Done</label></li>
       </ol>
       <figure class="code" data-kind="code">
-        <figcaption class="code-head"><span class="code-lang">Terminal</span><span class="code-title">Add and install the three design skills</span></figcaption>
-        <pre><code class="language-bash"># Add the marketplaces
+        <figcaption class="code-head"><span class="code-lang">Terminal</span><span class="code-title">Add and install the recommended skills</span></figcaption>
+        <pre><code class="language-bash"># Add the marketplaces (Anthropic's official one is already there)
 claude plugin marketplace add pbakaus/impeccable
 claude plugin marketplace add addyosmani/agent-skills
 claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+claude plugin marketplace add anthropics/knowledge-work-plugins
 # Install the plugins
-claude plugin install impeccable@impeccable
+claude plugin install mattpocock-skills@claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
 claude plugin install agent-skills@addy-agent-skills
-claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill</code></pre>
+claude plugin install frontend-design@claude-plugins-official
+claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+claude plugin install design@knowledge-work-plugins
+claude plugin install impeccable@impeccable</code></pre>
       </figure>
       <aside class="note heads">
         <span class="note-label">Heads up</span>
-        <p>Skills are written by other people, and they can change files on your computer. Install them only from the links above, and keep reading each permission request before you approve it.</p>
+        <p>Skills are written by other people, and they can change files on your computer. Install them only from the links above, and keep reading each permission request before you approve it. Each plugin also adds a little to every message Claude reads, so if you stop using one, turn it off in <code>/plugin</code>.</p>
       </aside>
 
       <h3 id="browser-design-tools">Browser and design-tool connections</h3>
