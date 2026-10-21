@@ -2,124 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Master Claude</title>
   <meta name="description" content="Claude skills, specs, guides and the weekly kaizen ledger." />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --surface: #f5f6f7;
-      --text: #1b1e21;
-      --muted: #5a6168;
-      --border: #dde1e5;
-      --accent: #0b6e69;
-      color-scheme: light dark;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1215;
-        --surface: #181c20;
-        --text: #e8eaed;
-        --muted: #a2a9b0;
-        --border: #2c3238;
-        --accent: #4fc9c1;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-    main { max-width: 44rem; margin: 0 auto; padding: 3rem 1rem; }
-    h1 { font-size: 2rem; margin: 0 0 .25rem; }
-    h2 { font-size: 1.125rem; margin: 2.5rem 0 .75rem; }
-    p { margin: 0 0 1rem; color: var(--muted); }
-    ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
-    li {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: .5rem;
-      padding: .875rem 1rem;
-    }
-    li p { margin: .25rem 0 0; font-size: .9375rem; }
-    a { color: var(--accent); font-weight: 600; text-underline-offset: 2px; }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .cta {
-      display: inline-block;
-      margin-top: .5rem;
-      padding: .625rem 1rem;
-      border-radius: .375rem;
-      background: var(--accent);
-      color: var(--bg);
-      text-decoration: none;
-    }
-    .cta:hover { text-decoration: underline; }
-    footer { margin-top: 3rem; font-size: .875rem; color: var(--muted); }
-  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Crect width='24' height='24' rx='2'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='24' height='24' fill='%23ffd21f'/%3E%3Cpath d='M-4 8L8-4M-4 16L16-4M-4 24L24-4M0 28L28 0M8 28L28 8M16 28L28 16' stroke='%23101820' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" />
+  <link rel="stylesheet" href="/assets/home.css" />
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Master Claude</h1>
-      <p>Home for Claude skills, specs, guides and the weekly kaizen ledger.</p>
-      <a class="cta" href="https://claude.ai/artifact/JPGZzFYcJURt9nF2dtcb9A">Open the Agentic Kaizen Ledger</a>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/ericthayer/master-claude/blob/main/skills/spec-to-component/SKILL.md">spec-to-component</a>
-          <p>Turn a design-system component request or ticket into a testable spec, then a plan, then an implementation with a11y and token gates.</p>
-        </li>
-        <li>
-          <a href="https://github.com/ericthayer/master-claude/blob/main/skills/design-token-audit/SKILL.md">design-token-audit</a>
-          <p>Audit a codebase or diff for design-token drift: hard-coded values, unused or duplicate tokens, theme gaps and contrast failures.</p>
-        </li>
-        <li>
-          <a href="https://github.com/ericthayer/master-claude/blob/main/skills/kaizen-retro/SKILL.md">kaizen-retro</a>
-          <p>Run a weekly kaizen retro on Claude workflows: find repeated prompts, blind approvals and slow steps, log metrics, and set next week's hypothesis.</p>
-        </li>
-      </ul>
+  <header class="bar">
+    <div class="wrap">
+      <a class="mark" href="/" aria-label="Master Claude, home">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><clipPath id="mark-clip"><rect width="24" height="24" rx="2"/></clipPath></defs><g clip-path="url(#mark-clip)"><rect width="24" height="24" fill="#ffd21f"/><path d="M-4 8L8-4M-4 16L16-4M-4 24L24-4M0 28L28 0M8 28L28 8M16 28L28 16" stroke="#101820" stroke-width="4"/></g></svg>
+        Master Claude
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#skills">Skills</a>
+        <a href="#guides">Guides</a>
+        <a href="#ledger">Ledger</a>
+        <a href="https://github.com/ericthayer/master-claude">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 class="masthead" id="hero-title"><span>Master</span> <span>Claude</span></h1>
+        <div>
+          <p class="lede">Saved skills, specs and guides for working with Claude, tightened a little every week.</p>
+          <div class="actions">
+            <a class="btn btn--tape" href="https://claude.ai/artifact/JPGZzFYcJURt9nF2dtcb9A">Open the kaizen ledger</a>
+            <a class="btn btn--line" href="/playbook/condensed/">Start the Quick Start</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="tape" role="presentation"></div>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="skills-title">Skills</h2>
+          <p>Saved instructions Claude follows for a repeatable job. Each one is a single <code>SKILL.md</code> file.</p>
+        </div>
+        <div class="board-wrap">
+          <ul class="board">
+            <li class="slot">
+              <svg viewBox="0 0 96 96" aria-hidden="true" focusable="false">
+                <g transform="rotate(-32 48 48)">
+                  <rect class="sil" x="4" y="32" width="88" height="32" rx="4" />
+                  <path class="sil-line" d="M18 32v12M30 32v8M42 32v12M54 32v8M66 32v12M78 32v8" />
+                </g>
+              </svg>
+              <h3><a href="https://github.com/ericthayer/master-claude/blob/main/skills/spec-to-component/SKILL.md">spec-to-component</a></h3>
+              <p>Turn a design-system component request or ticket into a testable spec, then a plan, then an implementation with a11y and token gates.</p>
+            </li>
+            <li class="slot">
+              <svg viewBox="0 0 96 96" aria-hidden="true" focusable="false">
+                <circle class="sil" cx="48" cy="54" r="38" />
+                <path class="sil-line" d="M24.6 67.5L17.7 71.5M17 54H13M24.6 40.5L17.7 36.5M32.5 27.2L30.5 23.7M48 27V19M63.5 27.2L65.5 23.7M71.4 40.5L78.3 36.5M79 54H83M71.4 67.5L78.3 71.5" />
+                <path class="sil-line" d="M48 54L63.5 31.9" />
+                <circle class="sil-fill" cx="48" cy="54" r="5" />
+              </svg>
+              <h3><a href="https://github.com/ericthayer/master-claude/blob/main/skills/design-token-audit/SKILL.md">design-token-audit</a></h3>
+              <p>Audit a codebase or diff for design-token drift: hard-coded values, unused or duplicate tokens, theme gaps and contrast failures.</p>
+            </li>
+            <li class="slot">
+              <svg viewBox="0 0 96 96" aria-hidden="true" focusable="false">
+                <path class="sil-line sil-line--loop" d="M70.9 31.9A28 28 0 1 1 31.9 25.1" />
+                <polygon class="sil-fill" points="42.6,17.6 25.6,16.1 38.2,34.1" />
+              </svg>
+              <h3><a href="https://github.com/ericthayer/master-claude/blob/main/skills/kaizen-retro/SKILL.md">kaizen-retro</a></h3>
+              <p>Run a weekly kaizen retro on Claude workflows: find repeated prompts, blind approvals and slow steps, log metrics, and set next week's hypothesis.</p>
+            </li>
+          </ul>
+        </div>
+        <p class="board-note"><code>spec-to-component</code> fills in the <a href="https://github.com/ericthayer/master-claude/blob/main/specs/_template.md">component spec template</a>.</p>
+      </div>
     </section>
 
-    <section aria-labelledby="refs-heading">
-      <h2 id="refs-heading">Specs and ledger</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/ericthayer/master-claude/blob/main/specs/_template.md">Component spec template</a>
-          <p>The template <code>spec-to-component</code> fills in.</p>
-        </li>
-        <li>
-          <a href="https://claude.ai/artifact/JPGZzFYcJURt9nF2dtcb9A">Agentic Kaizen Ledger</a>
-          <p>The 12-week program: operating loop, stack, curriculum, routines and guardrails.</p>
-        </li>
-        <li>
-          <a href="https://github.com/ericthayer/master-claude/tree/main/ledger">Weekly ledger entries</a>
-          <p>One entry per week, written by <code>kaizen-retro</code>.</p>
-        </li>
-      </ul>
+    <section class="section" id="guides" aria-labelledby="guides-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="guides-title">Guides</h2>
+          <p>Two editions of the same playbook. Pick by how much time you have.</p>
+        </div>
+        <div class="guides">
+          <article class="guide">
+            <div class="guide__copy">
+              <h3><a href="/playbook/condensed/">Claude Playbook Quick Start</a></h3>
+              <p>Prompting, GitHub and a portfolio rebuild with Claude, with seven starter prompts.</p>
+            </div>
+            <div class="guide__time">
+              <strong>About 11 minutes</strong>
+              <div class="meter" aria-hidden="true"><i class="meter__fill meter__fill--short"></i></div>
+              <small>Five short frames.</small>
+            </div>
+          </article>
+          <article class="guide">
+            <div class="guide__copy">
+              <h3><a href="/playbook/">UX Designer's Claude Playbook</a></h3>
+              <p>Everything in the Quick Start, plus Claude Max features, Chrome and Figma connections, a weekly rhythm and 18 starter prompts that fill in with your details.</p>
+            </div>
+            <div class="guide__time">
+              <strong>About 37 minutes</strong>
+              <div class="meter" aria-hidden="true"><i class="meter__fill meter__fill--full"></i></div>
+              <small>Five frames, a weekly rhythm and a glossary.</small>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section aria-labelledby="guides-heading">
-      <h2 id="guides-heading">Guides</h2>
-      <ul>
-        <li>
-          <a href="/playbook/">UX Designer's Claude Playbook</a>
-          <p>A beginner-friendly guide to HTML prototyping, GitHub and daily work with Claude, with copy-ready prompts that fill in with your details.</p>
-        </li>
-        <li>
-          <a href="/playbook/condensed/">Claude Playbook Quick Start</a>
-          <p>The condensed edition: prompting, GitHub and a portfolio rebuild in about an hour, with five starter prompts.</p>
-        </li>
-      </ul>
-    </section>
+    <section class="section" id="ledger" aria-labelledby="ledger-title">
+      <div class="wrap ledger">
+        <div class="ledger__intro">
+          <div class="section__head">
+            <h2 id="ledger-title">Ledger</h2>
+            <p>One entry a week, written by <code>kaizen-retro</code>. Each states a hypothesis, measures three things against the week before, and sets the next hypothesis.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn--tape" href="https://claude.ai/artifact/JPGZzFYcJURt9nF2dtcb9A">Read the 12-week program</a>
+            <a class="btn btn--line" href="https://github.com/ericthayer/master-claude/tree/main/ledger">Browse entries</a>
+          </div>
+        </div>
 
-    <footer>
-      <a href="https://github.com/ericthayer/master-claude">Source on GitHub</a>
-    </footer>
+        <article class="sheet" aria-labelledby="sheet-title">
+          <div class="sheet__head">
+            <h3 id="sheet-title">Next entry</h3>
+            <code>ledger/2026-W43.md</code>
+          </div>
+          <dl class="field"><dt>Hypothesis</dt><dd>Written at the start of the week</dd></dl>
+          <div class="metrics">
+            <dl class="field"><dt>Spec to merged PR time</dt><dd>No data yet</dd></dl>
+            <dl class="field"><dt>Correction rounds</dt><dd>No data yet</dd></dl>
+            <dl class="field"><dt>A11y defects caught before PR</dt><dd>No data yet</dd></dl>
+          </div>
+          <dl class="field"><dt>Decisions</dt><dd></dd></dl>
+          <dl class="field"><dt>Next week's hypothesis</dt><dd></dd></dl>
+          <p class="sheet__foot">No entries yet. Run <code>kaizen-retro</code> at the end of the week to write the first one.</p>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>MIT licensed.</span>
+      <a href="https://github.com/ericthayer/master-claude">Source on GitHub</a>
+    </div>
+  </footer>
 </body>
 </html>
